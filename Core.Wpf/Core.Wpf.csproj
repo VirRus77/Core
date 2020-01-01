@@ -3,8 +3,8 @@
   <PropertyGroup>
     <TargetFrameworks>net472</TargetFrameworks>
     <LangVersion>7.3</LangVersion>
-    <AssemblyName>Core</AssemblyName>
-    <RootNamespace>Core</RootNamespace>
+    <AssemblyName>Core.Wpf</AssemblyName>
+    <RootNamespace>Core.Wpf</RootNamespace>
     <UseWPF>true</UseWPF>
     <Platforms>AnyCPU;x86</Platforms>
   </PropertyGroup>
