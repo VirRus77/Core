@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0</TargetFrameworks>
+    <TargetFrameworks>netstandard1.6;netstandard2.0</TargetFrameworks>
 
     <AssemblyName>Core</AssemblyName>
     <RootNamespace>Core</RootNamespace>
@@ -23,6 +23,10 @@
 
   <ItemGroup>
     <Folder Include="Properties\" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.6' ">
+    <PackageReference Include="System.Xml.XmlDocument" Version="4.3.0" />
   </ItemGroup>
 
   <Import Project="..\Core.Shared\Core.Shared.projitems" Label="Shared" />
