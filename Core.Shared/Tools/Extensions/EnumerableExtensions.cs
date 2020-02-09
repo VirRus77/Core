@@ -36,7 +36,7 @@ namespace Core.Tools.Extensions
 
         public static void AddRange<T>(this ICollection<T> collection, IEnumerable<T> addedItems)
         {
-            if (collection is IList<T> list)
+            if (collection is List<T> list)
             {
                 list.AddRange(addedItems);
                 return;
