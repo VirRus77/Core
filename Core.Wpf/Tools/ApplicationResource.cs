@@ -3,7 +3,7 @@ using System.IO;
 using System.Management.Instrumentation;
 using System.Windows;
 
-namespace Core.Wpf.Tools
+namespace Core.Tools
 {
     public class ApplicationResource
     {

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace Core.Wpf.Interfaces
+namespace Core.Interfaces
 {
     public interface IViewModel<T>
             where T : class, INotifyPropertyChanged

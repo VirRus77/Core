@@ -3,7 +3,7 @@ using System.Windows;
 using System.Windows.Data;
 using System.Windows.Media;
 
-namespace Core.Wpf.Tools.Extensions
+namespace Core.Tools.Extensions
 {
     public static class DependencyObjectExtensions
     {

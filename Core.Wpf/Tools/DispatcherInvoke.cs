@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Windows;
 using System.Windows.Threading;
 
-namespace Core.Wpf.Tools
+namespace Core.Tools
 {
     /// <summary>
     /// Класс хелпер для создания синхронизации межпоточного взаимодействия

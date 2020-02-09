@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 
-namespace Core.Wpf.Tools
+namespace Core.Tools
 {
     /// <summary>
     /// Класс описания и выполнения команды

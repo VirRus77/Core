@@ -8,7 +8,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Media;
 
-namespace Core.Wpf.Tools
+namespace Core.Tools
 {
     /// <summary>
     /// Class that provides the Watermark attached property

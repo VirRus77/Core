@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Core.Wpf.Tools
+namespace Core.Tools
 {
     public class FilteredValue<T>
     {

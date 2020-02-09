@@ -7,7 +7,7 @@ using System.Windows;
 using System.Windows.Data;
 using System.Windows.Markup;
 
-namespace Core.Wpf.Converters
+namespace Core.Converters
 {
     /// <summary>
     /// Класс хранения ключ - значение для XAML

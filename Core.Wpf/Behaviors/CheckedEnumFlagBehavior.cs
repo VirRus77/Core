@@ -4,7 +4,7 @@ using System.Windows.Data;
 using System.Windows.Interactivity;
 using Core.Tools.Extensions;
 
-namespace Core.Wpf.Behaviors
+namespace Core.Behaviors
 {
     public class CheckedEnumFlagBehavior : Behavior<ToggleButton>
     {

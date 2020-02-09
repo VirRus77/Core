@@ -1,7 +1,7 @@
 ﻿using System.Windows.Controls;
 using System.Windows.Documents;
 
-namespace Core.Wpf.Tools.Extensions
+namespace Core.Tools.Extensions
 {
     /// <summary>
     /// <see cref="https://social.msdn.microsoft.com/Forums/vstudio/en-US/bc67d8c5-41f0-48bd-8d3d-79159e86b355/textpointer-into-a-flowdocument-based-on-character-index?forum=wpf"/>

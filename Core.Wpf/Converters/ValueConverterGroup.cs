@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Data;
 
-namespace Core.Wpf.Converters
+namespace Core.Converters
 {
     /// <summary>
     /// Конвертер для вызова нескольких конвертеров подряд

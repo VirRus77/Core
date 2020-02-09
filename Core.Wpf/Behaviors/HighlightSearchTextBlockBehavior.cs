@@ -7,9 +7,8 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Media;
 using Core.Tools.Extensions;
-using Core.Wpf.Tools.Extensions;
 
-namespace Core.Wpf.Behaviors
+namespace Core.Behaviors
 {
     public class HighlightSearchTextBlockBehavior:DependencyObject
     {

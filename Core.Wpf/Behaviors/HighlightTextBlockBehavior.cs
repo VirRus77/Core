@@ -5,9 +5,9 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Media;
-using Core.Wpf.Tools.Extensions;
+using Core.Tools.Extensions;
 
-namespace Core.Wpf.Behaviors
+namespace Core.Behaviors
 {
     /// <summary>
     /// Implements a <see cref="TextBlock"/> behavior to highlight text as specified by

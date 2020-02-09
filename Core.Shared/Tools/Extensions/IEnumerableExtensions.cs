@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using JetBrains.Annotations;
 
 namespace Core.Tools.Extensions
 {
@@ -15,11 +14,13 @@ namespace Core.Tools.Extensions
             {
                 yield return value;
             }
+
             foreach (var value in concatEnumerable)
             {
                 yield return value;
             }
         }
+
         public static int IndexOf<T>(this IEnumerable<T> enumerable, T findValue)
         {
             var index = 0;
@@ -29,6 +30,7 @@ namespace Core.Tools.Extensions
                     return index;
                 index++;
             }
+
             return -1;
         }
 
@@ -50,8 +52,10 @@ namespace Core.Tools.Extensions
         /// <param name="enumerable">Входящее перечисление</param>
         /// <param name="getChild">Функция получения дочерних перечислений по которым будет проходить выборка</param>
         /// <returns>Выбранные значения</returns>
-        public static IEnumerable<T> SelectRecursive<T>(this IEnumerable<T> enumerable,
-            Func<T, IEnumerable<T>> getChild)
+        public static IEnumerable<T> SelectRecursive<T>(
+            this IEnumerable<T> enumerable,
+            Func<T, IEnumerable<T>> getChild
+        )
             where T : class
         {
             return enumerable.SelectRecursive(getChild, v => v);
@@ -67,9 +71,13 @@ namespace Core.Tools.Extensions
         /// <param name="selectValue">Функция преобразования в исходящий тип</param>
         /// <param name="parent">Взладелец входящего перечисления</param>
         /// <returns>Выбранные значения</returns>
-        public static IEnumerable<V> SelectRecursive<T, V>(this IEnumerable<T> enumerable,
-        Func<T, IEnumerable<T>> getChild, SelectValue<T, V> selectValue, T parent = null)
-        where T : class
+        public static IEnumerable<V> SelectRecursive<T, V>(
+            this IEnumerable<T> enumerable,
+            Func<T, IEnumerable<T>> getChild,
+            SelectValue<T, V> selectValue,
+            T parent = null
+        )
+            where T : class
         {
             if (enumerable == null)
                 yield break;
@@ -97,8 +105,11 @@ namespace Core.Tools.Extensions
         /// <param name="getChild">Функция получения дочерних перечислений по которым будет проходить выборка</param>
         /// <param name="selectValue">Функция преобразования в исходящий тип</param>
         /// <returns>Выбранные значения</returns>
-        public static IEnumerable<V> SelectRecursive<T, V>(this IEnumerable<T> enumerable,
-            Func<T, IEnumerable<T>> getChild, Func<T, V> selectValue)
+        public static IEnumerable<V> SelectRecursive<T, V>(
+            this IEnumerable<T> enumerable,
+            Func<T, IEnumerable<T>> getChild,
+            Func<T, V> selectValue
+        )
         {
             if (enumerable == null)
                 yield break;
@@ -128,7 +139,7 @@ namespace Core.Tools.Extensions
             while (iterator.MoveNext())
             {
                 if (iterator.Current is T)
-                    yield return (T)iterator.Current;
+                    yield return (T) iterator.Current;
             }
         }
 
@@ -148,6 +159,7 @@ namespace Core.Tools.Extensions
                 action(value);
             }
         }
+
         /// <summary>
         /// Делегат для описания вызываемого метода
         /// </summary>
@@ -155,6 +167,7 @@ namespace Core.Tools.Extensions
         /// <param name="value">Значение</param>
         /// <param name="index">Индекс</param>
         public delegate void ForEachAction<T>(T value, int index);
+
         /// <summary>
         /// Перечисление с индексом
         /// </summary>
@@ -179,7 +192,7 @@ namespace Core.Tools.Extensions
         /// <typeparam name="T">Тип перечисления</typeparam>
         /// <param name="source">Перечисление</param>
         /// <returns></returns>
-        public static bool IsNullOrEmpty<T>([NoEnumeration] this IEnumerable<T> source)
+        public static bool IsNullOrEmpty<T>(this IEnumerable<T> source)
         {
             return source?.Any() != true;
         }
@@ -234,14 +247,15 @@ namespace Core.Tools.Extensions
         /// <returns></returns>
         public static IEnumerable<IEnumerable<TSource>> ChunkBy<TSource>(this IEnumerable<TSource> source, int chunkSize)
         {
-            while (source?.Any() == true)                     // while there are elements left
-            {   // still something to chunk:
+            while (source?.Any() == true) // while there are elements left
+            {
+                // still something to chunk:
                 yield return source.Take(chunkSize); // return a chunk of chunkSize
                 source = source.Skip(chunkSize);     // skip the returned chunk
             }
         }
 
-        public static IEnumerable<T> Cicle<T>(this IEnumerable<T> enumerable)
+        public static IEnumerable<T> Cycle<T>(this IEnumerable<T> enumerable)
         {
             if (!(enumerable is IList<T> list))
             {

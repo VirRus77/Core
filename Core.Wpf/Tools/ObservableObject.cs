@@ -2,7 +2,7 @@
 using System.Runtime.CompilerServices;
 using JetBrains.Annotations;
 
-namespace Core.Wpf.Tools
+namespace Core.Tools
 {
     /// <summary>
     /// Класс для обёртывания работы с INotifyPropertyChanged

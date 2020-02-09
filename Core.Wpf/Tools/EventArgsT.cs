@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Core.Wpf.Tools
+namespace Core.Tools
 {
     public class EventArgs<T>:EventArgs
     {

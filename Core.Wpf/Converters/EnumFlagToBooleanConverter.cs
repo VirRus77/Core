@@ -5,7 +5,7 @@ using System.Windows;
 using System.Windows.Data;
 using Core.Tools.Extensions;
 
-namespace Core.Wpf.Converters
+namespace Core.Converters
 {
     public class EnumFlagToBooleanConverter : DependencyObject,IValueConverter, IMultiValueConverter
     {

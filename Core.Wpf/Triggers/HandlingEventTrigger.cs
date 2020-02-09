@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace Core.Wpf.Triggers
+namespace Core.Triggers
 {
     /// <summary>
     /// Тригер перехватывающий дальнейшую обработку события
