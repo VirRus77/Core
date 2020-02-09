@@ -6,7 +6,7 @@ using System.Linq;
 namespace Core.Tools.Extensions
 {
     // ReSharper disable once InconsistentNaming
-    public static class IEnumerableExtensions
+    public static partial class EnumerableExtensions
     {
         public static IEnumerable Concat(this IEnumerable enumerable, IEnumerable concatEnumerable)
         {
@@ -32,6 +32,20 @@ namespace Core.Tools.Extensions
             }
 
             return -1;
+        }
+
+        public static void AddRange<T>(this ICollection<T> collection, IEnumerable<T> addedItems)
+        {
+            if (collection is IList<T> list)
+            {
+                list.AddRange(addedItems);
+                return;
+            }
+
+            foreach (var addedItem in addedItems)
+            {
+                collection.Add(addedItem);
+            }
         }
 
         /// <summary>
@@ -235,23 +249,6 @@ namespace Core.Tools.Extensions
             foreach (var distinctValue in enumerable.Distinct(ComparerCreator.CreateEquality(comparerDelegate)))
             {
                 yield return distinctValue;
-            }
-        }
-
-        /// <summary>
-        /// <see cref="https://stackoverflow.com/questions/11463734/split-a-list-into-smaller-lists-of-n-size"/>
-        /// </summary>
-        /// <typeparam name="TSource"></typeparam>
-        /// <param name="source"></param>
-        /// <param name="chunkSize"></param>
-        /// <returns></returns>
-        public static IEnumerable<IEnumerable<TSource>> ChunkBy<TSource>(this IEnumerable<TSource> source, int chunkSize)
-        {
-            while (source?.Any() == true) // while there are elements left
-            {
-                // still something to chunk:
-                yield return source.Take(chunkSize); // return a chunk of chunkSize
-                source = source.Skip(chunkSize);     // skip the returned chunk
             }
         }
 
